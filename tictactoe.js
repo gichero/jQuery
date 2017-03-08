@@ -1,3 +1,8 @@
+var computer = 'X'; // the computer is X
+var player = 'O'; // you are O
+var turn = player; // the player goes first
+var xwins = 0, owins = 0; // win tallies
+
 $(document).ready(function() {
 // $('.cell').click(function(){
 //     var value = $(this).text();
@@ -40,6 +45,7 @@ playerWin = function(player){
     var cell8 = $('#8').text() === player;
     var cell9 = $('#9').text() === player;
 
+    var count = 0;
     //possible wins in the game
     if(cell1 && cell2 && cell3 ||
     cell4 && cell5 && cell6 ||
@@ -50,13 +56,40 @@ playerWin = function(player){
     cell1 && cell5 && cell9 ||
     cell3 && cell5 && cell7){
         //declare winner
-        $('.score').text('Player O wins');
+        $('.status').text('Player O wins');
     }
-    else{
+    else if (count === 9){
         //declare draw
-        $('.score').text("It's a draw")
+        $('.status').text("It's a draw");
     }
 
-}
+};
+function computerTurn() {
+    var strategies = [];
+    if (option('random')) strategies.push(strategyRandom);
+    for (var i=0; i<strategies.length; i++) {
+      var turn = strategies[i]();
+      if (!turn) continue;
+      val(turn[0], turn[1], computer);
+      break;
+    }
+  }
+
+  // go in a randomly selected blank space
+  function strategyRandom() {
+    // gather all the blank spots in an array
+    var blanks = [];
+    for (var x=0; x<3; x++) {
+      for (var y=0; y<3; y++) {
+        if (val(x,y)==='') cell.push([x,y]);
+      }
+    }
+    // return a random entry in the array of blanks
+    if (blanks.length>0) {
+      var r = Math.floor((Math.random()*blanks.length));
+      return blanks[r];
+    }
+    else return false;
+  }
 
 });//end of document ready
