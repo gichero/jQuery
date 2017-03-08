@@ -3,49 +3,58 @@
     <head>
         <meta charset="utf-8">
         <title>TicTacToe</title>
+        <script src="jquery.js"></script>
+        <script src="tictactoe.js"></script>
+
         <style>
-        td{
-            width: 100px;
-            height: 100px;
-        }
-        .vertical {
-            border-left: 2px solid black;
-            border-right: 2px solid black;
+        body{
+            text-align: center;
+            font-family: Helvetica;
         }
 
-        .horizontal {
-            border-top: 2px solid black;
-            border-bottom: 2px solid black;
-        }
         table{
             margin:auto;
+            background-color: lightblue;
+        }
+        .cell{
+            width: 200px;
+            height: 200px;
+            font-size: 7em;
+        }
+        .boardgame{
+            display: inline-block;
+        }
+        .score{
+            font-size: 4em;
         }
 
-        h1{
-            text-align: center;
-        }
 
         </style>
     </head>
     <body>
         <h1>Tic Tac Toe</h1>
-        <table>
+        <table class = 'boardgame'>
             <tr>
-                <td></td>
-                <td class = 'vertical'></td>
-                <td></td>
+                <td><button id = '1' class = 'cell'></button></td>
+                <td><button id = '2' class = 'cell'></button></td>
+                <td><button id = '3' class = 'cell'></button></td>
             </tr>
             <tr>
-                <td class = 'horizontal'></td>
-                <td class = 'vertical horizontal'></td>
-                <td class = 'horizontal'></td>
+                <td><button id = '4' class = 'cell'></button></td>
+                <td><button id = '5' class = 'cell'></button></td>
+                <td><button id = '6' class = 'cell'></button></td>
             </tr>
             <tr>
-                <td ></td>
-                <td class = 'vertical'></td>
-                <td ></td>
+                <td><button id = '7' class = 'cell'></button></td>
+                <td><button id = '8' class = 'cell'></button></td>
+                <td><button id = '9' class = 'cell'></button></td>
             </tr>
+
         </table>
+
+        <div class= 'score'></div>
+        <div class= 'computer'></div>
+        <div class= 'AI'></div>
 
     </body>
 </html>

@@ -16,42 +16,52 @@
 
     */
     //add a task to the to do list
-    $(document).ready(function() {
-
-        $('#add-button').on( 'click', function(){
-
-            var textValue = $('#description').val();
-            $('#todo-list').append('<li>' + textValue + '<button>X</button> ' +' </li>')
-            $('#description').val('');
-
-        });
-        //delete a task from the to do list
-        $('#todo-list').on('click', 'li', function(event){
-            $(this).parent().fadeOut(500, function(){
-                $(this).remove();
-            });
-            event.stopPropagation()
-            // var button = $(this);
-            // var li = button.parent();
-            // li.remove();
-        });
-    });
+    // $(document).ready(function() {
+    //
+    //     $('#add-button').on( 'click', function(){
+    //
+    //         var textValue = $('#description').val();
+    //         $('#todo-list').append('<li>' + textValue + '<button>  X</button> ' +' </li>')
+    //         $('#description').val('');
+    //
+    //     });
+    //     //delete a task from the to do list
+    //     $('#todo-list').on('click', 'li', function(event){
+    //         $(this).parent().fadeOut(500, function(){
+    //             $(this).remove();
+    //         });
+    //         event.stopPropagation()
+    //         // var button = $(this);
+    //         // var li = button.parent();
+    //         // li.remove();
+    //     });
+    // });
 // var val = str;
 //     $('#description').val()
 
-
+$(document).ready(function() {
 //check off 'li's
-// $('#todo-list').on('click', 'li', function(){
-//     $(this).toggleClass();
-// });
-//
-// $('#todo-list').on('click', 'li', function(event){
-//     $(this).parent().fadeOut(500, function(){
-//         $(this).remove();
-//     });
-//     event.stopPropagation();
-// });
-//
+$('#todo-list').on('click', 'li', function(){
+    $(this).toggleClass('crossout');
+});
+//remove 'li'
+$('#todo-list').on('click', 'li', function(event){
+    $(this).parent().fadeOut(500, function(){
+        $(this).remove();
+    });
+    event.stopPropagation();
+});
+//add 'li'
+
+$('#add-button').on( 'click', function(){
+
+    var textValue = $('#description').val();
+    $(this).val('');
+    $('#todo-list').append('<li>' + textValue + '<button>  X</button> ' +' </li>')
+
+
+});
+
 // $('#description').keypress(function(event){
 //     if(event.which === 13){
 //         var txt =  $(this).val();
@@ -59,6 +69,7 @@
 //         $('#todo-list').append('<li><span>X </span>' + txt + '</li> ')
 //     }
 // });
+});
 
     </script>
     <style>
@@ -70,6 +81,9 @@
     #description, #search, #todo-list {
       font-size: 1.5em;
     }
+    .crossout {
+        text-decoration: line-through;
+    }
     </style>
   </head>
   <body>
@@ -78,7 +92,11 @@
       <button id="add-button">Add Task</button>
       <ul id="todo-list">
         <!-- <li><span>X </span>Feed the cat</li> -->
-        <li>Feed the cat <button>X</button></li>
+        <li>Feed the cat
+            <button class = 'delete'>X</button>
+            <button class = 'edit'>Edit</button>
+            <input type = 'checkbox' name ='checkbox' value ='cancel' class = 'check'>
+        </li>
       </ul>
     </div>
   </body>
