@@ -1,0 +1,49 @@
+#screen{
+    position: relative;
+    background-image: url(images/background.jpg);
+    background-size: cover;
+    height: 56vw;
+    width: 100vw;
+}
+
+#table{
+    position: absolute;
+    top:15vw;
+    left:15vw;
+}
+.hand{
+    width: 70vw;
+    height: 10vw;
+    border: 1px solid white;
+}
+
+.buttons{
+    position: relative;
+    left: 30vw;
+}
+
+#table label{
+    color:black;
+}
+
+#player_label_div{
+    margin-top: 2vw;
+    background-color: white
+}
+
+#dealer_label_div{
+    margin-top: 2vw;
+    background-color: white
+}
+
+#dealer_label{
+    padding-left: 1vw;
+}
+#player_label{
+    padding-left: 1vw;
+}
+.card{
+    height: 8vw;
+    padding: 1vw;
+
+}
