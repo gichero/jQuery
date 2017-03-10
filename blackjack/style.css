@@ -11,6 +11,14 @@
     top:15vw;
     left:15vw;
 }
+
+#show_bet{
+    color:white;
+}
+
+#message{
+    color:white;
+}
 .hand{
     width: 70vw;
     height: 10vw;
@@ -20,6 +28,7 @@
 .buttons{
     position: relative;
     left: 30vw;
+    margin-top: 2vw;
 }
 
 #table label{
@@ -46,4 +55,7 @@
     height: 8vw;
     padding: 1vw;
 
+}
+.disable{
+    pointer-events: none;
 }
