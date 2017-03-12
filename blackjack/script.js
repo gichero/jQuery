@@ -42,7 +42,7 @@ function calculatePoints(cards){
         var sum = 0;
         for(var i=1; i<cards.length; i++){
             sum = add(cards, i);
-            console.log("sum1: "+sum)
+            console.log("sum1: "+sum);
         }
         if(sum + 11 > 21){
             sum += 1;
@@ -55,7 +55,7 @@ function calculatePoints(cards){
             sum = add(cards, i);
         }
     }
-    console.log("sum2: "+sum)
+    console.log("sum2: "+sum);
     return sum;
 }
 function newDeck(){
@@ -66,7 +66,7 @@ function newDeck(){
         for(var j = 0; j<4; j++){
             card.point = i;
             card.suit = suit[j];
-            var copy = Object.assign({}, card)
+            var copy = Object.assign({}, card);
             deck.push(copy);
         }
     }
@@ -116,8 +116,6 @@ $(document).ready(function(){
     function dealCard(div, cards,label,character){
         var copy = Object.assign({}, new_deck[0]);
         cards.push(copy);
-        console.log(new_deck);
-        console.log(new_deck);
         var image = document.createElement("IMG");
         $(image).attr("src", getCardImageUrl(new_deck[0]));
         $(image).addClass("card");
@@ -129,7 +127,7 @@ $(document).ready(function(){
             $("#message").text(character+" Busted!");
             if(character === "Player"){
                 player_money -= bet;
-                dealer_money += bet
+                dealer_money += bet;
             }else if(character === "Dealer"){
                 dealer_money -= bet;
                 player_money += bet;
@@ -139,8 +137,8 @@ $(document).ready(function(){
             if(player_money<0 ||dealer_money<0){
                 dealer_money=500;
                 player_money=500;
-                $("#player-money").text(player_money)
-                $("#dealer-money").text(dealer_money)
+                $("#player-money").text(player_money);
+                $("#dealer-money").text(dealer_money);
                 if(player_money<0){
                     setTimeout(function(){$('#message').text('Player ran out of money, go get more! Maybe sell your house...');},2000);
                 }else{
