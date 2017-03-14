@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Typed</title>
+        <script src='jquery.js'></script>
+        <script src="typed.js"></script>
+        <style>
+        .element{
+            font-size: 4em;
+
+        }
+        </style>
+
+    </head>
+    <body>
+        <div class='element'></div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+                Typed.new(".element", {
+                    strings: ["Hi There.", "Want a Beer.", "Here, have a cold one"],
+                    typeSpeed: 1
+                });
+            });
+        </script>
+    </body>
+</html>

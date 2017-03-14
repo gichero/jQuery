@@ -38,10 +38,12 @@ $(document).ready(function() {
 
   }; // End of isDraw
 
-  $('#reset').click(function(){
-      reset(table);
-      displayPlayNextPlayer(turn, player);
-  });
+  function newGame() {
+     $("#board div").find("span").remove();
+     $(".winner").removeClass("winner");
+     $("#status").empty();
+   }
+
 
   var winningCombos = [
     [2, 5, 8],
