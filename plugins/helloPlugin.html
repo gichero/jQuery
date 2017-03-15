@@ -5,16 +5,44 @@
         <title>Hello World</title>
         <script src='jquery.js'></script>
 
+        <script>
+        // $('button').click(function(){
+        //     alert('Hello, World!')
+        // });
+        // $(function(){
+        //     $('button').toggle();
+        // });
+        </script>
+
+        <style>
+        #red, #black, #green{
+            font-size: 2em;
+        }
+        #red{
+            border: solid red 2px;
+        }
+        #black{
+            border: solid black 2px;
+        }
+        #green{
+            border: solid green 2px;
+        }
+        </style>
+
     </head>
 
     <body>
-        <button>Click here</button>
-
+        <button id = 'red'>Click here</button>
+        <button id = 'black'>Toggle me</button>
+        <button id = 'green'>Turn me Off</button>
 
         <script>
-        $('button').click(function(){
-            alert('Hello, World!')
+        $(function(){
+            $('button').toggle();
+            offText:'off';
+            onText:'on';
         });
         </script>
+
     </body>
 </html>
